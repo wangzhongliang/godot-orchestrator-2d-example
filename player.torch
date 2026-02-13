@@ -119,8 +119,8 @@ id = 218
 
 [obj type="OScriptGraph" id="OScriptGraph_7d6rl"]
 graph_name = &"EventGraph"
-offset = Vector2(-940.0695190429688, -105.90579223632813)
-zoom = 0.2633311152458191
+offset = Vector2(-347.466064453125, -265.1173095703125)
+zoom = 0.4532092213630676
 flags = 8
 nodes = Array[int]([18, 29, 45, 107, 112, 136, 137, 146, 149, 150, 151, 152, 153, 154, 156, 157, 158, 159, 160, 164, 169, 177, 183, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 206, 207, 208, 210, 211, 212, 213, 215, 216, 218, 219, 223, 229, 233, 238, 239, 244, 246, 248, 249, 250, 251, 252, 253, 254, 255, 258, 261, 262, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 280])
 functions = Array[int]([29, 177, 218])
@@ -135,29 +135,29 @@ functions = Array[int]([3])
 
 [obj type="OScriptGraph" id="OScriptGraph_vy8fj"]
 graph_name = &"forward_force"
-offset = Vector2(-199, 0)
+offset = Vector2(-865, 0)
 flags = 22
 nodes = Array[int]([15, 51, 54, 127, 141, 142, 143])
 functions = Array[int]([15])
 
 [obj type="OScriptGraph" id="OScriptGraph_sljev"]
 graph_name = &"jump_force"
-offset = Vector2(-980, -315)
+offset = Vector2(-656.75, -128.125)
+zoom = 1.100000023841858
 flags = 22
 nodes = Array[int]([42, 58, 93, 125, 126, 144, 145])
 functions = Array[int]([42])
 
 [obj type="OScriptGraph" id="OScriptGraph_1kp85"]
 graph_name = &"backward_force"
-offset = Vector2(-600, -40)
+offset = Vector2(-763, -108)
 flags = 22
 nodes = Array[int]([132, 133, 134, 135, 138, 139, 140])
 functions = Array[int]([132])
 
 [obj type="OScriptGraph" id="OScriptGraph_6ct3r"]
 graph_name = &"gravity_force"
-offset = Vector2(-115.66294860839844, 0)
-zoom = 0.38554316759109497
+offset = Vector2(537, -187.25)
 flags = 22
 nodes = Array[int]([78, 81, 82, 131])
 functions = Array[int]([78])
@@ -876,7 +876,7 @@ pin_data = Array[Dictionary]([{
 }])
 
 [obj type="OScriptNodeInputAction" id="OScriptNodeInputAction_qnedo"]
-action = "ui_left"
+action = "left"
 id = 138
 position = Vector2(-600, 80)
 pin_data = Array[Dictionary]([{
@@ -884,8 +884,7 @@ pin_data = Array[Dictionary]([{
 "type": 1,
 "dir": 1,
 "flags": 2,
-"label": "Pressed",
-"dv": false
+"label": "Pressed"
 }])
 
 [obj type="OScriptNodeBranch" id="OScriptNodeBranch_wyqjk"]
@@ -952,7 +951,7 @@ pin_data = Array[Dictionary]([{
 }])
 
 [obj type="OScriptNodeInputAction" id="OScriptNodeInputAction_6ct3r"]
-action = "ui_right"
+action = "right"
 id = 142
 position = Vector2(-420, 180)
 pin_data = Array[Dictionary]([{
@@ -2156,7 +2155,7 @@ pin_data = Array[Dictionary]([{
 }])
 
 [obj type="OScriptNodeInputAction" id="OScriptNodeInputAction_0onnm"]
-action = "ui_up"
+action = "up"
 id = 207
 position = Vector2(1480, 940)
 pin_data = Array[Dictionary]([{
@@ -2164,8 +2163,7 @@ pin_data = Array[Dictionary]([{
 "type": 1,
 "dir": 1,
 "flags": 2,
-"label": "Pressed",
-"dv": false
+"label": "Pressed"
 }])
 
 [obj type="OScriptNodeBranch" id="OScriptNodeBranch_sljev"]
@@ -2250,7 +2248,7 @@ pin_data = Array[Dictionary]([{
 }])
 
 [obj type="OScriptNodeInputAction" id="OScriptNodeInputAction_n2js1"]
-action = "ui_down"
+action = "down"
 id = 212
 position = Vector2(1460, 1060)
 pin_data = Array[Dictionary]([{
@@ -2258,8 +2256,7 @@ pin_data = Array[Dictionary]([{
 "type": 1,
 "dir": 1,
 "flags": 2,
-"label": "Pressed",
-"dv": false
+"label": "Pressed"
 }])
 
 [obj type="OScriptNodePropertySet" id="OScriptNodePropertySet_f6gnl"]
@@ -2690,7 +2687,7 @@ pin_data = Array[Dictionary]([{
 }])
 
 [obj type="OScriptNodeInputAction" id="OScriptNodeInputAction_sljev"]
-action = "ui_up"
+action = "up"
 mode = 2
 id = 250
 position = Vector2(-260, 1280)
@@ -2741,7 +2738,7 @@ pin_data = Array[Dictionary]([{
 }])
 
 [obj type="OScriptNodeInputAction" id="OScriptNodeInputAction_1t7ha"]
-action = "ui_down"
+action = "down"
 mode = 2
 id = 253
 position = Vector2(-260, 1380)
@@ -2902,7 +2899,7 @@ pin_data = Array[Dictionary]([{
 }])
 
 [obj type="OScriptNodeInputAction" id="OScriptNodeInputAction_wyqjk"]
-action = "ui_left"
+action = "left"
 mode = 2
 id = 266
 position = Vector2(-520, 1560)
@@ -2911,12 +2908,11 @@ pin_data = Array[Dictionary]([{
 "type": 1,
 "dir": 1,
 "flags": 2,
-"label": "Just Pressed",
-"dv": false
+"label": "Just Pressed"
 }])
 
 [obj type="OScriptNodeInputAction" id="OScriptNodeInputAction_k85er"]
-action = "ui_right"
+action = "right"
 mode = 2
 id = 267
 position = Vector2(-520, 1660)
@@ -2925,8 +2921,7 @@ pin_data = Array[Dictionary]([{
 "type": 1,
 "dir": 1,
 "flags": 2,
-"label": "Just Pressed",
-"dv": false
+"label": "Just Pressed"
 }])
 
 [obj type="OScriptNodeOperator" id="OScriptNodeOperator_ye16i"]
