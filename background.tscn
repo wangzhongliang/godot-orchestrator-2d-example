@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bkkyn2y21ukap"]
+
+[ext_resource type="Texture2D" uid="uid://cfd6rfhtr66ql" path="res://assets/Sprites/Backgrounds/Default/background_fade_trees.png" id="1_i7s6n"]
+[ext_resource type="Texture2D" uid="uid://clljrx0o0j3bo" path="res://assets/Sprites/Backgrounds/Default/background_solid_cloud.png" id="2_xehqc"]
+
+[node name="Background" type="Node2D" unique_id=184477331]
+
+[node name="BackgroundFadeTrees3" type="Sprite2D" parent="." unique_id=167629734]
+position = Vector2(64, 192)
+texture = ExtResource("1_i7s6n")
+
+[node name="BackgroundFadeTrees2" type="Sprite2D" parent="." unique_id=1972005090]
+position = Vector2(-192, 192)
+texture = ExtResource("1_i7s6n")
+
+[node name="BackgroundFadeTrees" type="Sprite2D" parent="." unique_id=1328679445]
+position = Vector2(-448, 192)
+texture = ExtResource("1_i7s6n")
+
+[node name="BackgroundFadeTrees5" type="Sprite2D" parent="." unique_id=1142297847]
+position = Vector2(576, 192)
+texture = ExtResource("1_i7s6n")
+
+[node name="BackgroundFadeTrees6" type="Sprite2D" parent="." unique_id=2090245754]
+position = Vector2(320, 192)
+texture = ExtResource("1_i7s6n")
+
+[node name="BackgroundSolidCloud" type="Sprite2D" parent="." unique_id=1522288085]
+position = Vector2(-448, -64)
+texture = ExtResource("2_xehqc")
+
+[node name="BackgroundSolidCloud2" type="Sprite2D" parent="." unique_id=482812632]
+position = Vector2(-192, -64)
+texture = ExtResource("2_xehqc")
+
+[node name="BackgroundSolidCloud3" type="Sprite2D" parent="." unique_id=43667208]
+position = Vector2(64, -64)
+texture = ExtResource("2_xehqc")
+
+[node name="BackgroundSolidCloud4" type="Sprite2D" parent="." unique_id=1371188090]
+position = Vector2(320, -64)
+texture = ExtResource("2_xehqc")
+
+[node name="BackgroundSolidCloud5" type="Sprite2D" parent="." unique_id=964801005]
+position = Vector2(576, -64)
+texture = ExtResource("2_xehqc")
+
+[node name="BackgroundSolidCloud6" type="Sprite2D" parent="." unique_id=87375571]
+position = Vector2(-448, -320)
+texture = ExtResource("2_xehqc")
+
+[node name="BackgroundSolidCloud7" type="Sprite2D" parent="." unique_id=372123522]
+position = Vector2(-192, -320)
+texture = ExtResource("2_xehqc")
+
+[node name="BackgroundSolidCloud8" type="Sprite2D" parent="." unique_id=1807474032]
+position = Vector2(64, -320)
+texture = ExtResource("2_xehqc")
+
+[node name="BackgroundSolidCloud9" type="Sprite2D" parent="." unique_id=1575096654]
+position = Vector2(320, -320)
+texture = ExtResource("2_xehqc")
+
+[node name="BackgroundSolidCloud10" type="Sprite2D" parent="." unique_id=754588003]
+position = Vector2(576, -320)
+texture = ExtResource("2_xehqc")

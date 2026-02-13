@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://xm6losa4kfxa"]
+
+[ext_resource type="Texture2D" uid="uid://dea0ko4u3svg6" path="res://assets/Sprites/Tiles/Default/block_blue.png" id="1_guolk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r0wom"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxlwx"]
+
+[node name="Block" type="StaticBody2D" unique_id=1796222110]
+physics_material_override = SubResource("PhysicsMaterial_r0wom")
+
+[node name="BlockBlue" type="Sprite2D" parent="." unique_id=237689269]
+texture = ExtResource("1_guolk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1946773465]
+scale = Vector2(3.18, 3.18)
+shape = SubResource("RectangleShape2D_hxlwx")

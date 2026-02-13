@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://3vvo7fcaix77"]
+
+[ext_resource type="Script" uid="uid://cqiltwaebwis4" path="res://player.torch" id="1_qp52p"]
+[ext_resource type="Texture2D" uid="uid://cptcl04ka2fs0" path="res://assets/Sprites/Characters/Default/character_beige_climb_a.png" id="2_6ct3r"]
+[ext_resource type="Texture2D" uid="uid://cxky4wy2cke4t" path="res://assets/Sprites/Characters/Default/character_beige_climb_b.png" id="3_1kp85"]
+[ext_resource type="Texture2D" uid="uid://byb5dtrkc6rrp" path="res://assets/Sprites/Characters/Default/character_beige_hit.png" id="4_qnedo"]
+[ext_resource type="Texture2D" uid="uid://c0phhte6puw3x" path="res://assets/Sprites/Characters/Default/character_beige_idle.png" id="5_wyqjk"]
+[ext_resource type="Texture2D" uid="uid://w50grprqrff3" path="res://assets/Sprites/Characters/Default/character_beige_jump.png" id="6_k85er"]
+[ext_resource type="Texture2D" uid="uid://dg5cvus8naq7o" path="res://assets/Sprites/Characters/Default/character_beige_walk_a.png" id="7_ebjds"]
+[ext_resource type="Texture2D" uid="uid://cvhryu4pj7wkh" path="res://assets/Sprites/Characters/Default/character_beige_walk_b.png" id="8_y1dt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsv1q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhc3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6ct3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1kp85")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qnedo")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wyqjk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_k85er")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ebjds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y1dt5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=501284137]
+script = ExtResource("1_qp52p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=802056795]
+position = Vector2(0, 10)
+scale = Vector2(5.45, 5.45)
+shape = SubResource("RectangleShape2D_qsv1q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1815039925]
+sprite_frames = SubResource("SpriteFrames_dhc3j")
+animation = &"idle"
