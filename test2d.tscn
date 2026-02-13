@@ -3,7 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://3vvo7fcaix77" path="res://character_body_2d.tscn" id="1_dkrdg"]
 [ext_resource type="PackedScene" uid="uid://bkkyn2y21ukap" path="res://background.tscn" id="1_qsv1q"]
 [ext_resource type="Script" uid="uid://cb4xykli5kjmo" path="res://ladder.torch" id="4_wlx1x"]
+[ext_resource type="Script" uid="uid://bmfxuvqhy172j" path="res://button.torch" id="5_731hh"]
 [ext_resource type="Texture2D" uid="uid://b0bu6gmhawxo4" path="res://assets/Spritesheets/spritesheet-tiles-default.png" id="5_j7cdx"]
+[ext_resource type="Texture2D" uid="uid://wpk7ow1yx4iy" path="res://assets/Sprites/Tiles/Default/switch_red_pressed.png" id="6_vy8fj"]
+[ext_resource type="Texture2D" uid="uid://w1jmpp74ce00" path="res://assets/Sprites/Tiles/Default/switch_red.png" id="7_0onnm"]
+[ext_resource type="Texture2D" uid="uid://cm6fevuxlcp7g" path="res://assets/Sprites/Tiles/Default/heart1.png" id="8_sljev"]
+[ext_resource type="Texture2D" uid="uid://c2m3eqtfpmwi4" path="res://assets/Sprites/Tiles/Default/heart.png" id="9_2sruo"]
+[ext_resource type="Texture2D" uid="uid://b45e657insm16" path="res://assets/Sprites/Tiles/Default/heart2.png" id="10_dhc3j"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j7cdx"]
 
@@ -157,14 +163,11 @@ texture_region_size = Vector2i(65, 65)
 4:8/0 = 0
 5:8/0 = 0
 6:8/0 = 0
-6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 20, -32, 20)
-6:8/0/physics_layer_0/polygon_0/one_way = true
+6:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 20, -32, 20)
 7:8/0 = 0
-7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 20, -32, 20)
-7:8/0/physics_layer_0/polygon_0/one_way = true
+7:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 20, -32, 20)
 8:8/0 = 0
-8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 20, -32, 20)
-8:8/0/physics_layer_0/polygon_0/one_way = true
+8:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 20, -32, 20)
 9:8/0 = 0
 10:8/0 = 0
 11:8/0 = 0
@@ -283,13 +286,54 @@ texture_region_size = Vector2i(65, 65)
 [sub_resource type="TileSet" id="TileSet_731hh"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_j7cdx")
+physics_layer_1/collision_layer = 2
+physics_layer_1/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_3cnxo")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sljev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vy8fj")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0onnm")
+}],
+"loop": true,
+"name": &"released",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sruo"]
+size = Vector2(64, 40)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wlx1x"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7cdx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7cdx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlx1x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1t7ha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_sljev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2sruo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dhc3j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Scene" type="Node2D" unique_id=1283222918]
 
@@ -298,6 +342,23 @@ sources/0 = SubResource("TileSetAtlasSource_3cnxo")
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=356447116]
 tile_map_data = PackedByteArray("AADv/xIAAAAAAAAAAADr/xIAAAAAAAAAAADv/w4AAAAAAAAAAADz/xIAAAAAAAAAAAAJABIAAAALAAUAAAAJAA4AAAAMAAUAAAAJAAoAAAAMAAUAAAAJAAYAAAAMAAUAAAAJAAIAAAAMAAUAAAAJAP7/AAANAAUAAAAFAAEAAAAGAAgAAAAJAAEAAAAHAAgAAAANAAEAAAAHAAgAAAARAAEAAAAHAAgAAAAVAAEAAAAHAAgAAAAZAAEAAAAHAAgAAAAdAAEAAAAIAAgAAAA=")
 tile_set = SubResource("TileSet_731hh")
+
+[node name="Button" type="Area2D" parent="." unique_id=412000517]
+position = Vector2(408, -40)
+script = ExtResource("5_731hh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Button" unique_id=1074085628]
+sprite_frames = SubResource("SpriteFrames_sljev")
+animation = &"released"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button" unique_id=161947497]
+visible = false
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_2sruo")
+
+[node name="CharacterBody2D" parent="." unique_id=501284137 instance=ExtResource("1_dkrdg")]
+collision_layer = 7
+collision_mask = 7
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=421193423]
 position = Vector2(0, 345)
@@ -308,18 +369,23 @@ position = Vector2(0, -22)
 scale = Vector2(15, 15)
 shape = SubResource("WorldBoundaryShape2D_j7cdx")
 
-[node name="CharacterBody2D" parent="." unique_id=1777039644 instance=ExtResource("1_dkrdg")]
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=197317299]
 
-[node name="Ladder1" type="Area2D" parent="." unique_id=590944853]
-position = Vector2(152, 120)
+[node name="Ladder1" type="Area2D" parent="." unique_id=462294873]
+position = Vector2(152.00002, 136)
+scale = Vector2(3, 16)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("4_wlx1x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder1" unique_id=1505099262]
-position = Vector2(0, 16)
-scale = Vector2(3, 16)
-shape = SubResource("RectangleShape2D_j7cdx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder1" unique_id=1888565795]
+shape = SubResource("RectangleShape2D_wlx1x")
+
+[node name="Heart" type="AnimatedSprite2D" parent="." unique_id=106377481]
+position = Vector2(-8, -160)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_1t7ha")
+autoplay = "default"
 
 [connection signal="body_entered" from="Ladder1" to="CharacterBody2D" method="_on_ladder_1_body_entered"]
 [connection signal="body_exited" from="Ladder1" to="CharacterBody2D" method="_on_ladder_1_body_exited"]
