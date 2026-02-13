@@ -165,6 +165,7 @@ texture_region_size = Vector2i(65, 65)
 6:8/0 = 0
 6:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 20, -32, 20)
 7:8/0 = 0
+7:8/0/z_index = -1
 7:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 20, -32, 20)
 8:8/0 = 0
 8:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 20, -32, 20)
@@ -312,11 +313,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2sruo"]
 size = Vector2(64, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sljev"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wlx1x"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7cdx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlx1x"]
+size = Vector2(3.9999924, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1t7ha"]
 animations = [{
@@ -338,6 +342,7 @@ animations = [{
 [node name="Scene" type="Node2D" unique_id=1283222918]
 
 [node name="Background" parent="." unique_id=184477331 instance=ExtResource("1_qsv1q")]
+z_index = -1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=356447116]
 tile_map_data = PackedByteArray("AADv/xIAAAAAAAAAAADr/xIAAAAAAAAAAADv/w4AAAAAAAAAAADz/xIAAAAAAAAAAAAJABIAAAALAAUAAAAJAA4AAAAMAAUAAAAJAAoAAAAMAAUAAAAJAAYAAAAMAAUAAAAJAAIAAAAMAAUAAAAJAP7/AAANAAUAAAAFAAEAAAAGAAgAAAAJAAEAAAAHAAgAAAANAAEAAAAHAAgAAAARAAEAAAAHAAgAAAAVAAEAAAAHAAgAAAAZAAEAAAAHAAgAAAAdAAEAAAAIAAgAAAA=")
@@ -359,6 +364,15 @@ shape = SubResource("RectangleShape2D_2sruo")
 [node name="CharacterBody2D" parent="." unique_id=501284137 instance=ExtResource("1_dkrdg")]
 collision_layer = 7
 collision_mask = 7
+
+[node name="ForLadder" type="Area2D" parent="CharacterBody2D" unique_id=242810494]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/ForLadder" unique_id=444362447]
+position = Vector2(0, 15)
+scale = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_sljev")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=421193423]
 position = Vector2(0, 345)

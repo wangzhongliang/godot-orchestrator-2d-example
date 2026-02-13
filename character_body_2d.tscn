@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dg5cvus8naq7o" path="res://assets/Sprites/Characters/Default/character_beige_walk_a.png" id="7_ebjds"]
 [ext_resource type="Texture2D" uid="uid://cvhryu4pj7wkh" path="res://assets/Sprites/Characters/Default/character_beige_walk_b.png" id="8_y1dt5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsv1q"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qp52p"]
+radius = 7.155964
+height = 17.247707
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dhc3j"]
 animations = [{
@@ -64,9 +66,9 @@ animations = [{
 script = ExtResource("1_qp52p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=802056795]
-position = Vector2(0, 10)
+position = Vector2(0, 16)
 scale = Vector2(5.45, 5.45)
-shape = SubResource("RectangleShape2D_qsv1q")
+shape = SubResource("CapsuleShape2D_qp52p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1815039925]
 sprite_frames = SubResource("SpriteFrames_dhc3j")

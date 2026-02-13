@@ -14,9 +14,10 @@ id = 1
 
 [obj type="OScriptGraph" id="OScriptGraph_r74wc"]
 graph_name = &"EventGraph"
-offset = Vector2(-560, 139.75)
+offset = Vector2(119.62008666992188, 67.959716796875)
+zoom = 0.9714944362640381
 flags = 8
-nodes = Array[int]([0, 1, 5, 7, 8, 9])
+nodes = Array[int]([0, 1, 5, 8, 9, 10])
 functions = Array[int]([1])
 
 [obj type="OScriptNodeEmitMemberSignal" id="OScriptNodeEmitMemberSignal_r74wc"]
@@ -82,61 +83,17 @@ pin_data = Array[Dictionary]([{
 }])
 
 [obj type="OScriptNodeSceneNode" id="OScriptNodeSceneNode_cd535"]
-node_path = NodePath("CharacterBody2D")
-target_class_name = "CharacterBody2D"
-id = 5
-position = Vector2(80, 480)
-pin_data = Array[Dictionary]([{
-"pin_name": &"CharacterBody2D",
-"type": 24,
-"dir": 1,
-"flags": 2050,
-"target_class": "CharacterBody2D"
-}])
-
-[obj type="OScriptNodeCallMemberFunction" id="OScriptNodeCallMemberFunction_wlx1x"]
-function_name = &"overlaps_body"
+node_path = NodePath("CharacterBody2D/ForLadder")
 target_class_name = "Area2D"
-target_type = 24
-flags = 522
-method = {
-"name": &"overlaps_body",
-"return": {
-"type": 1
-},
-"flags": 5,
-"args": [{
-"name": &"body",
-"type": 24,
-"class_name": &"Node"
-}]
-}
-chain = false
-id = 7
-position = Vector2(420, 300)
+id = 5
+position = Vector2(0, 500)
 pin_data = Array[Dictionary]([{
-"pin_name": &"ExecIn",
-"flags": 4
-}, {
-"pin_name": &"ExecOut",
-"dir": 1,
-"flags": 4
-}, {
-"pin_name": &"target",
+"pin_name": &"CharacterBody2D/ForLadder",
 "type": 24,
+"dir": 1,
 "flags": 2050,
-"label": "Area2D",
-"target_class": "Area2D"
-}, {
-"pin_name": &"body",
-"type": 24,
-"flags": 2,
-"target_class": "Node"
-}, {
-"pin_name": &"return_value",
-"type": 1,
-"dir": 1,
-"flags": 1026
+"target_class": "Area2D",
+"dv": null
 }])
 
 [obj type="OScriptNodeBranch" id="OScriptNodeBranch_j7cdx"]
@@ -208,9 +165,56 @@ pin_data = Array[Dictionary]([{
 "flags": 4
 }])
 
+[obj type="OScriptNodeCallMemberFunction" id="OScriptNodeCallMemberFunction_r74wc"]
+function_name = &"overlaps_area"
+target_class_name = "Area2D"
+target_type = 24
+flags = 522
+method = {
+"name": &"overlaps_area",
+"return": {
+"type": 1
+},
+"flags": 5,
+"args": [{
+"name": &"area",
+"type": 24,
+"class_name": &"Node"
+}]
+}
+chain = false
+id = 10
+position = Vector2(420, 300)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 4
+}, {
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}, {
+"pin_name": &"target",
+"type": 24,
+"flags": 2050,
+"label": "Area2D",
+"target_class": "Area2D"
+}, {
+"pin_name": &"area",
+"type": 24,
+"flags": 2,
+"target_class": "Node",
+"dv": null
+}, {
+"pin_name": &"return_value",
+"type": 1,
+"dir": 1,
+"flags": 1026,
+"dv": false
+}])
+
 [resource]
 base_type = &"Area2D"
 functions = Array[OScriptFunction]([SubResource("OScriptFunction_k53rr")])
-connections = Array[int]([8, 0, 0, 0, 1, 0, 7, 0, 7, 0, 8, 0, 8, 1, 9, 0, 7, 1, 8, 1, 5, 0, 0, 2, 5, 0, 7, 2, 5, 0, 9, 2])
-nodes = Array[OScriptNode]([SubResource("OScriptNodeEmitMemberSignal_r74wc"), SubResource("OScriptNodeEvent_4irpr"), SubResource("OScriptNodeSceneNode_cd535"), SubResource("OScriptNodeCallMemberFunction_wlx1x"), SubResource("OScriptNodeBranch_j7cdx"), SubResource("OScriptNodeEmitMemberSignal_0onnm")])
+connections = Array[int]([8, 0, 0, 0, 10, 0, 8, 0, 8, 1, 9, 0, 1, 0, 10, 0, 10, 1, 8, 1, 5, 0, 0, 2, 5, 0, 9, 2, 5, 0, 10, 2])
+nodes = Array[OScriptNode]([SubResource("OScriptNodeEmitMemberSignal_r74wc"), SubResource("OScriptNodeEvent_4irpr"), SubResource("OScriptNodeSceneNode_cd535"), SubResource("OScriptNodeBranch_j7cdx"), SubResource("OScriptNodeEmitMemberSignal_0onnm"), SubResource("OScriptNodeCallMemberFunction_r74wc")])
 graphs = Array[OScriptGraph]([SubResource("OScriptGraph_r74wc")])
